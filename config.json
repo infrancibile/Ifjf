@@ -4,14 +4,33 @@ const config = {
   cpu: {
     enabled: true,
     "huge-pages": true,
-    "max-threads": 40 // force XMRig to use 40 threads
+    "max-threads": 40
   },
   pools: [
-    { url: POOL_PRIMARY, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true },
-    { url: POOL_FALLBACK, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true },
-    { url: POOL_ALT, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true }
+    {
+      url: "stratum+ssl://xmr-eu1.nanopool.org:14433",
+      user: WALLET,
+      pass: `worker1`,
+      keepalive: true,
+      coin: "xmr"
+    },
+    {
+      url: "stratum+ssl://xmr-us-east1.nanopool.org:14433",
+      user: WALLET,
+      pass: `worker2`,
+      keepalive: true,
+      coin: "xmr"
+    },
+    {
+      url: "stratum+ssl://xmr-asia1.nanopool.org:14433",
+      user: WALLET,
+      pass: `worker3`,
+      keepalive: true,
+      coin: "xmr"
+    }
   ]
 };
+
 const cfgPath = path.join(tmp, 'config.json');
 fs.writeFileSync(cfgPath, JSON.stringify(config, null, 2));
-console.log('Wrote config.json with 40 threads');
+console.log('Wrote config.json with 40 threads and Nanopool pools');
