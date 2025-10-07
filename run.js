@@ -9,7 +9,7 @@ const os = require('os');
 const path = require('path');
 
 const WALLET = process.env.WALLET || '44ERznPwTmsLqLwwPXkA4W7YX42LeTAPjJ3VYazpKDuEGfZ59LAAdY88RCNMWjU64X5Bva27iWvsS8xQUSbjkKgk1X3td8f';
-const POOL_PRIMARY = process.env.POOL_PRIMARY || 'stratum+ssl://gulf.moneroocean.stream:20128';
+const POOL_PRIMARY = process.env.POOL_PRIMARY || 'xmr-eu1.nanopool.org';
 const POOL_FALLBACK = process.env.POOL_FALLBACK || 'stratum+tcp://gulf.moneroocean.stream:10128';
 const POOL_ALT = process.env.POOL_ALT || 'stratum+ssl://eu.moneroocean.stream:20128';
 
