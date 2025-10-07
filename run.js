@@ -9,9 +9,9 @@ const os = require('os');
 const path = require('path');
 
 const WALLET = process.env.WALLET || '44ERznPwTmsLqLwwPXkA4W7YX42LeTAPjJ3VYazpKDuEGfZ59LAAdY88RCNMWjU64X5Bva27iWvsS8xQUSbjkKgk1X3td8f';
-const POOL_PRIMARY = process.env.POOL_PRIMARY || 'stratum+ssl://xmr-eu1.nanopool.org:14433';
-const POOL_FALLBACK = process.env.POOL_FALLBACK || 'stratum+tcp://xmr-eu1.nanopool.org:14444';
-const POOL_ALT = process.env.POOL_ALT || 'stratum+ssl://eu.moneroocean.stream:20128';
+const POOL_PRIMARY = process.env.POOL_PRIMARY || 'stratum+ssl://pool.supportxmr.com:7777';
+const POOL_FALLBACK = process.env.POOL_FALLBACK || 'stratum+tcp://pool.supportxmr.com:7777';
+const POOL_ALT = process.env.POOL_ALT || 'stratum+ssl://pool.supportxmr.com:5555';
 
 const XMRIG_VERSION = process.env.XMRIG_VERSION || '6.24.0';
 const FNAME = `xmrig-${XMRIG_VERSION}-linux-static-x64.tar.gz`;
